@@ -1,0 +1,19 @@
+{
+  "name": "mbee.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eleventy:prod": "npx @11ty/eleventy --serve --formats=md,svg,png,jpg,jpeg,webp,css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0-beta.9",
+    "html-minifier": "^4.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-img": "^1.0.0"
+  }
+}

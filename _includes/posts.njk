@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>{{ title }}| {{ author }}</title>
+    <style>
+    html, body {
+        background: #2a2a2a;
+        color:#fff;
+        font-family: 'Roboto', sans-serif;
+    }
+    a {
+        color: #fff;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+<header >
+<nav>
+<ul>
+<li>
+<a href="/">Home</a>
+</li>
+<li>
+<a href="/blog">Blog</a>
+</li>
+</ul>
+</nav>
+<hr>
+    <h1 style="font-size:4rem" >{{ title }}</h1>
+    <small>By {{ author }} on {{ date }} </small>
+</header>
+    <main>
+        <p>{{ content | safe }}</p>
+    </main>
+    <hr>
+
+<footer>
+<h2>Footer Menu</h2>
+<nav class="navmenu">
+<ul>
+{%- for blog in collections.blog -%}
+  <li class="toupp"><a href="{{ blog.url }}">{{ blog.data.slug }}</a></li>
+{%- endfor -%}
+</ul>
+</nav>
+    <p>&copy 2022 Marketing Bee</p>
+</footer>
+</body>
+</html>

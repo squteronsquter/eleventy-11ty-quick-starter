@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>{{ title }}</title>
+    <style>
+    a {
+        color: #6495ED;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration:underline;
+    }
+    </style>
+</head>
+<body>
+<header >
+<nav>
+<ul>
+<li>
+<a href="/">Home</a>
+</li>
+<li>
+<a href="/blog">Blog</a>
+</li>
+</ul>
+</nav>
+<hr>
+    {% if title %}<h1 style="font-size:4rem" >{{ title }}</h1>{% endif %}
+    {% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
+</header>
+    <main>
+        <p>{{ content | safe }}</p>
+    </main>
+    <hr>
+<footer>
+<h2>Footer Menu</h2>
+<nav class="navmenu">
+<ul>
+{%- for blog in collections.blog -%}
+  <li class="toupp"><a href="{{ blog.url }}">{{ blog.data.slug }}</a></li>
+{%- endfor -%}
+</ul>
+</nav>
+    <p>&copy 2022 Marketing Bee by {{ author }}.</p>
+</footer>
+</body>
+</html>
